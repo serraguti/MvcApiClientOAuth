@@ -15,7 +15,6 @@ namespace MvcApiClientOAuth.Controllers
             this.service = service;
         }
 
-        [AuthorizeEmpleados]
         public async Task<IActionResult> Index()
         {
             List<Empleado> empleados = await
@@ -23,12 +22,27 @@ namespace MvcApiClientOAuth.Controllers
             return View(empleados);
         }
 
-        [AuthorizeEmpleados]
         public async Task<IActionResult> Details(int id)
         {
             Empleado empleado = await
                     this.service.FindEmpleadoAsync(id);
             return View(empleado);
+        }
+
+        [AuthorizeEmpleados]
+        public async Task<IActionResult> Perfil()
+        {
+            Empleado empleado =
+                await this.service.GetPerfilEmpleadoAsync();
+            return View(empleado);
+        }
+
+        [AuthorizeEmpleados]
+        public async Task<IActionResult> Compis()
+        {
+            List<Empleado> empleados =
+                await this.service.GetCompisTrabajoAsync();
+            return View(empleados);
         }
     }
 }

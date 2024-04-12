@@ -3,11 +3,18 @@
     <li class="nav-item">
         <a class="nav-link text-black"
         asp-controller="Empleados"
-        asp-action="Index">
-            Empleados
+        asp-action="Perfil">
+            Mi perfil
         </a>
     </li>
-    <li class="nav-link">
+    <li class="nav-item">
+        <a class="nav-link text-black"
+           asp-controller="Empleados"
+           asp-action="Compis">
+            Compañeros de trabajo
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link text-danger"
         asp-controller="Managed" asp-action="Logout">
             Log Out <span style="color:blue">
@@ -22,7 +29,7 @@ else
     <li class="nav-item">
         <a class="nav-link text-black"
            asp-controller="Empleados"
-           asp-action="Index">
+           asp-action="Perfil">
             Log In
         </a>
     </li>
